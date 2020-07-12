@@ -34,7 +34,7 @@ public class ButtonListControl : MonoBehaviour
 
     private void Update()
     {
-        if (messageCooldown > 0)
+        if (messageCooldown > 0)    
         {
             messageCooldown -= Time.deltaTime;
         }
