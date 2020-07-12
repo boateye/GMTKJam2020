@@ -57,7 +57,7 @@ public class ScoreKeeper : MonoBehaviour
     /// <summary>
     /// Keeps track of the view count to be displayed to the player
     /// </summary>
-    public static int VIEWERCOUNT;
+    public static int VIEWERCOUNT = 2020;
     
     /// <summary>
     /// Assigns this instance to singleton instance, stops it from getting destroyed and initalizes variables.
