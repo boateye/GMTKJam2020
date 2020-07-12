@@ -48,6 +48,8 @@ public class ButtonListControl : MonoBehaviour
             {
                 // spawns button with randomized message
                 GameObject button = Instantiate(buttonTemplate) as GameObject;
+                button.GetComponent<ButtonListButton>().chatUser.GetComponent<ChatUser>().ChooseRandomizedAttributes();
+                button.GetComponent<ButtonListButton>().InitializeButtonText();
                 button.SetActive(true);
                 button.transform.SetParent(buttonTemplate.transform.parent, false);
             }

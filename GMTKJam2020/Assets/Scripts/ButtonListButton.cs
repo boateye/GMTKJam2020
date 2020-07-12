@@ -17,9 +17,11 @@ public class ButtonListButton : MonoBehaviour
         myText.text = textString;
     }
 
-    public void Awake()
+    public void InitializeButtonText()
     {
         SetText(chatUser.GetComponent<ChatUser>().userName + ": " + chatUser.GetComponent<ChatUser>().ChooseRandomizedMessage());
+        //Debug.Log(chatUser.GetComponent<ChatUser>().userName);
+        Debug.Log(chatUser.GetComponent<ChatUser>().relationshipID);
     }
     
     /// <summary>

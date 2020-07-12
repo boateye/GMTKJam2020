@@ -71,11 +71,13 @@ public class ScoreKeeper : MonoBehaviour
         
         // initialize scores
         GOODSCORE = 0;
-        BADSCORE = 0; 
+        BADSCORE = 0;
+
+        PopulateLists();
     }
 
     // Start is called before the first frame update
-    void Start()
+    void PopulateLists()
     {
         // iterate through each list of messages and add them to the appropriate arrays.
         try

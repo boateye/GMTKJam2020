@@ -163,6 +163,8 @@ MonoBehaviour:
   relationshipID: 2
   personalityID: 3
   userTypeID: 1
+  messageTypeID: 0
+  isGood: 0
 --- !u!4 &136951232
 Transform:
   m_ObjectHideFlags: 0
@@ -347,6 +349,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &582649529 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4326366564843685503, guid: 254136d7cb47ce14ebf29cd06887e33c,
+    type: 3}
+  m_PrefabInstance: {fileID: 4957263695936501298}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &582649531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582649529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 665b647a70f3bef4da4dba0551e2c65d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &636158003
 GameObject:
   m_ObjectHideFlags: 0
@@ -383,6 +403,8 @@ MonoBehaviour:
   relationshipID: 1
   personalityID: 5
   userTypeID: 2
+  messageTypeID: 0
+  isGood: 0
 --- !u!4 &636158005
 Transform:
   m_ObjectHideFlags: 0
@@ -769,6 +791,8 @@ MonoBehaviour:
   relationshipID: 0
   personalityID: 2
   userTypeID: 3
+  messageTypeID: 0
+  isGood: 0
 --- !u!4 &1729073179
 Transform:
   m_ObjectHideFlags: 0
@@ -819,6 +843,8 @@ MonoBehaviour:
   relationshipID: 1
   personalityID: 1
   userTypeID: 0
+  messageTypeID: 0
+  isGood: 0
 --- !u!4 &1986112890
 Transform:
   m_ObjectHideFlags: 0
@@ -869,6 +895,8 @@ MonoBehaviour:
   relationshipID: 1
   personalityID: 0
   userTypeID: 3
+  messageTypeID: 0
+  isGood: 0
 --- !u!4 &2112086953
 Transform:
   m_ObjectHideFlags: 0

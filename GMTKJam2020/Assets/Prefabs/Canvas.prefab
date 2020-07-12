@@ -146,7 +146,7 @@ MonoBehaviour:
   m_fontSize: 24
   m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -817,8 +817,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -10, y: 0.000020266}
-  m_SizeDelta: {x: 20, y: 595.9999}
+  m_AnchoredPosition: {x: -10, y: -0.000030518}
+  m_SizeDelta: {x: 20, y: 510.99988}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &105159148608592193
 CanvasRenderer:
@@ -1774,7 +1774,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myText: {fileID: 6913792462913373048}
   actionPopup: {fileID: 952255643}
-  chatUser: {fileID: 0}
+  chatUser: {fileID: 3300064294840345585, guid: 8d0691b04daa0d14faf658f5f091813f,
+    type: 3}
 --- !u!1 &8929824308921420790
 GameObject:
   m_ObjectHideFlags: 0
@@ -1812,7 +1813,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000030517578, y: -298}
+  m_AnchoredPosition: {x: -0.000030517578, y: -255.5}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &932147576735627864
@@ -1930,7 +1931,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: -107.70001, y: 0}
-  m_SizeDelta: {x: 215.39996, y: 596}
+  m_SizeDelta: {x: 215.39996, y: 511}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &656513835454670636
 CanvasRenderer:
