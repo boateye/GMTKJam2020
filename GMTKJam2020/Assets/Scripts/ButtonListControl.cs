@@ -21,14 +21,16 @@ public class ButtonListControl : MonoBehaviour
     TextMeshProUGUI chatWindow;
     public ArrayList chatBus = new ArrayList();
 
- ;
+ 
     private IEnumerator Cooldown
 	{
 		get
 		{
-			currentCooldown = 0;
-
-            yield return new WaitForSeconds(messageCooldown);
+            currentCooldown = 0;
+            while (currentCooldown < messageCooldown)
+			{
+                currentCooldown += Time.deltaTime;
+            }
 
 			GameObject button = Instantiate(buttonTemplate) as GameObject;
 			button.GetComponent<ButtonListButton>().chatUser.GetComponent<ChatUser>().ChooseRandomizedAttributes();
@@ -38,51 +40,9 @@ public class ButtonListControl : MonoBehaviour
 
 			StartCoroutine(Cooldown);
 
-		}
-	}
-
-	private void Start()
-    {
-        waveSeverity = 3;
-        resetCooldown = messageCooldown;
-        StartCoroutine(Cooldown);
-
-        waveSeverity = 3; 
-
-        //InitialCoroutine = StartWave(1,32);
-        //FirstWaveCoroutine = StartWave(33,5);
-        //SecondWaveCoroutine = StartWave(99,5);
-        //ThirdWaveCoroutine = StartWave(122,5);
-        //ForthWaveCoroutine = StartWave(139,5);
-    
-
-    }
-
-    private void Update()
-    {
-        /*if (messageCooldown > 0)    
-        {
-            messageCooldown -= Time.deltaTime;
+            yield return new WaitForEndOfFrame();
         }
-
-        else if (messageCooldown <= 0)
-        {
-            // Displays message once cooldown hits/goes below 0 then resets cooldown
-
-         
-            
-            // spawns button with randomized message
-            GameObject button = Instantiate(buttonTemplate) as GameObject;
-            button.GetComponent<ButtonListButton>().chatUser.GetComponent<ChatUser>().ChooseRandomizedAttributes();
-            button.GetComponent<ButtonListButton>().InitializeButtonText();
-            button.SetActive(true);
-            button.transform.SetParent(buttonTemplate.transform.parent, false);
-
-            //chatWindow.text = chatMessages;
-            messageCooldown = resetCooldown;
-        }*/
-    }
- 
+	}
 
     /// <summary>
     /// Starts chat wave. 
@@ -92,12 +52,28 @@ public class ButtonListControl : MonoBehaviour
     /// <param name="waitTime"></param>
     /// <param name="surgeTime"></param>
     /// <returns></returns>
-    private IEnumerator StartWave(float waitTime,float surgeTime)
+    private IEnumerator StartWave(float waitTime, float surgeTime)
     {
+        currentCooldown = 0;
         yield return new WaitForSeconds(waitTime);
         messageCooldown = waveSeverity;
         yield return new WaitForSeconds(surgeTime);
         messageCooldown = resetCooldown;
+
+    }
+
+    private void Start()
+    {
+        waveSeverity = 3;
+        resetCooldown = messageCooldown;
+        StartCoroutine(Cooldown);
+
+        StartCoroutine(StartWave(1,32));
+        StartCoroutine(StartWave(33,5));
+        StartCoroutine(StartWave(99,5));
+        StartCoroutine(StartWave(122,5));
+        StartCoroutine(StartWave(139,5));
+
     }
 
 }
