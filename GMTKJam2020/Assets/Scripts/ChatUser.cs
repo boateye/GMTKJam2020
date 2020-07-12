@@ -175,7 +175,7 @@ public class ChatUser : MonoBehaviour
         remainingUsernameCount = ScoreKeeper.usernameList.Count;
         selectedUsernameIndex = Random.Range(0, remainingUsernameCount);
         userName = ScoreKeeper.usernameList[selectedUsernameIndex].ToString();
-        ScoreKeeper.usernameList.RemoveAt(selectedUsernameIndex);
+        //ScoreKeeper.usernameList.RemoveAt(selectedUsernameIndex);
         //Debug.Log("My username is: " + userName + " and i am the " + relationshipID + " " + userTypeID + " " + personalityID);
     }
     
