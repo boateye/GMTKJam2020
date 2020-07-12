@@ -3555,6 +3555,21 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1189880208297731940, guid: 6e0546ef720a6c94f884ec8bf598cbff,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.41037738
+      objectReference: {fileID: 0}
+    - target: {fileID: 1189880208297731940, guid: 6e0546ef720a6c94f884ec8bf598cbff,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.63715756
+      objectReference: {fileID: 0}
+    - target: {fileID: 1189880208297731940, guid: 6e0546ef720a6c94f884ec8bf598cbff,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1720077962752985921, guid: 6e0546ef720a6c94f884ec8bf598cbff,
         type: 3}
       propertyPath: m_ShowMaskGraphic
@@ -3615,6 +3630,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: -20
       objectReference: {fileID: 0}
+    - target: {fileID: 4554958590169871654, guid: 6e0546ef720a6c94f884ec8bf598cbff,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4875239254999514455, guid: 6e0546ef720a6c94f884ec8bf598cbff,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -3639,6 +3659,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 504.83606
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041749754260856846, guid: 6e0546ef720a6c94f884ec8bf598cbff,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041749754260856846, guid: 6e0546ef720a6c94f884ec8bf598cbff,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.6850835
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041749754260856846, guid: 6e0546ef720a6c94f884ec8bf598cbff,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.11792451
       objectReference: {fileID: 0}
     - target: {fileID: 6487520247109349481, guid: 6e0546ef720a6c94f884ec8bf598cbff,
         type: 3}
