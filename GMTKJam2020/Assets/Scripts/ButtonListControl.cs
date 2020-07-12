@@ -15,11 +15,7 @@ public class ButtonListControl : MonoBehaviour
     /// </summary>
     public float waveSeverity = 1;
     private float currentCooldown;
-    public string testMessage;
     float resetCooldown;
-    private string chatMessages;
-    TextMeshProUGUI chatWindow;
-    public ArrayList chatBus = new ArrayList();
 
  
     private IEnumerator Cooldown
@@ -55,9 +51,11 @@ public class ButtonListControl : MonoBehaviour
     /// <returns></returns>
     private IEnumerator StartWave(float waitTime, float surgeTime)
     {
-        currentCooldown = 0;
+        
         yield return new WaitForSeconds(waitTime);
+        StopCoroutine(Cooldown);
         messageCooldown = waveSeverity;
+        StartCoroutine(Cooldown);
         yield return new WaitForSeconds(surgeTime);
         messageCooldown = resetCooldown;
 
@@ -65,11 +63,8 @@ public class ButtonListControl : MonoBehaviour
 
     private void Start()
     {
-        waveSeverity = 3;
         resetCooldown = messageCooldown;
         StartCoroutine(Cooldown);
-
-        StartCoroutine(StartWave(1,32));
         StartCoroutine(StartWave(33,5));
         StartCoroutine(StartWave(99,5));
         StartCoroutine(StartWave(122,5));

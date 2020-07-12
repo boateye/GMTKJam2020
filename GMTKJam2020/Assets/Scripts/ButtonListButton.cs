@@ -7,7 +7,9 @@ using TMPro;
 public class ButtonListButton : MonoBehaviour
 {
     [SerializeField]
-    private TextMeshProUGUI myText;
+    private Text myText; 
+    [SerializeField]
+    //private TextMeshProUGUI myText;
     [SerializeField]
     private GameObject actionPopup;
     public GameObject chatUser;

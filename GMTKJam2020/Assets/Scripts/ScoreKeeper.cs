@@ -11,7 +11,8 @@ public class ScoreKeeper : MonoBehaviour
     private const string PrefabName = "Score_Keeper";
 
     private static ScoreKeeper skInstance = null;
-    public TextMeshProUGUI ViewerCountText;
+    //public TextMeshProUGUI ViewerCountText;
+    public Text ViewerCountText;
 
     /// <summary>
     /// Gets the instance of the ScoreKeeper.
