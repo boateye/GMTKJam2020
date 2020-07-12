@@ -81,6 +81,7 @@ public class ButtonListButton : MonoBehaviour
 		}
         GetComponent<Image>().color = Color.red;
         SetText(chatUser.GetComponent<ChatUser>().userName + ": has been banned");
+        ScoreKeeper.DeleteNameFromList(chatUser.GetComponent<ChatUser>().userName);
         GetComponent<Button>().interactable = false;
         actionPopup.SetActive(false);
     }

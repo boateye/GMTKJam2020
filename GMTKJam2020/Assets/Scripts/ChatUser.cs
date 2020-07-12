@@ -170,18 +170,13 @@ public class ChatUser : MonoBehaviour
                 personalityID = PersonalityID.Troll;
                 break;
         }
-        //Debug.Log(messageInterval);
-        //resetInterval = messageInterval;
 
         // 'Rolls' on the screenname list and assigns it to this instance of the gameobject, then removes that name from the list.
         remainingUsernameCount = ScoreKeeper.usernameList.Count;
-        //Debug.Log(remainingUsernameCount);
         selectedUsernameIndex = Random.Range(0, remainingUsernameCount);
-        //Debug.Log(selectedUsernameIndex);
         userName = ScoreKeeper.usernameList[selectedUsernameIndex].ToString();
-        Debug.Log(userName);
         ScoreKeeper.usernameList.RemoveAt(selectedUsernameIndex);
-        Debug.Log("My username is: " + userName + " and i am the " + relationshipID + " " + userTypeID + " " + personalityID);
+        //Debug.Log("My username is: " + userName + " and i am the " + relationshipID + " " + userTypeID + " " + personalityID);
     }
     
     

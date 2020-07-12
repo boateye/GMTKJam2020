@@ -11,7 +11,7 @@ public class ScoreKeeper : MonoBehaviour
     private const string PrefabName = "Score_Keeper";
 
     private static ScoreKeeper skInstance = null;
-    public static TextMeshProUGUI ViewerCountText;
+    public TextMeshProUGUI ViewerCountText;
 
     /// <summary>
     /// Gets the instance of the ScoreKeeper.
@@ -287,17 +287,23 @@ public class ScoreKeeper : MonoBehaviour
         }
     }
 
-    public static void CalculateViewCount()
+    public void CalculateViewCount()
     {
         int totalScore;
         totalScore = GOODSCORE - BADSCORE;
+        if (totalScore < 0)
+            totalScore = 0;
         VIEWERCOUNT = totalScore * viewerCountMultiplier;
         ViewerCountText.text = VIEWERCOUNT.ToString();
     }
 
-    public void DeleteFromList(string nameToDelete)
+    /// <summary>
+    /// This function can be improved in the future. Currently, its only use is to delete names when a user is banned.
+    /// </summary>
+    /// <param name="nameToDelete"></param>
+    public static void DeleteNameFromList(string nameToDelete)
     {
-
+        usernameList.Remove(nameToDelete);
     }
 
     public void AddNameToList(string nameToAdd)
