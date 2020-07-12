@@ -1,0 +1,9 @@
+Assets/Lists/belief.txt
+Assets/Lists/chatcommands.txt
+Assets/Lists/disbelief.txt
+Assets/Lists/emoticons.txt
+Assets/Lists/generic.txt
+Assets/Lists/greetings.txt
+Assets/Lists/hashtags.txt
+Assets/Lists/links.txt
+Assets/Lists/spamlinks.txt

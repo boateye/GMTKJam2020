@@ -7,6 +7,8 @@ public class ButtonListControl : MonoBehaviour
 {
     [SerializeField]
     private GameObject buttonTemplate;
+    [SerializeField]
+    private GameObject userTemplate;
     public float messageCooldown;
     public string testMessage;
     float resetCooldown;
@@ -19,8 +21,15 @@ public class ButtonListControl : MonoBehaviour
         resetCooldown = messageCooldown;
         //chatWindow = GetComponent<TextMeshProUGUI>();
         chatMessages = "Welcome to my chat room!";
-        //chatWindow.text = chatMessages;
-        Debug.Log(resetCooldown);
+        // chatWindow.text = chatMessages;
+        // Debug.Log(resetCooldown);
+
+        // create 5 'main' users spawners
+        //for (int i = 1; i <=5; i++)
+        //{
+        //    GameObject user = Instantiate(userTemplate) as GameObject;
+        //    Debug.Log("My name is: " + user.GetComponent<ChatUser>().userName);
+        //}
     }
 
     private void Update()
@@ -48,7 +57,7 @@ public class ButtonListControl : MonoBehaviour
             chatBus.Clear();
             //chatWindow.text = chatMessages;
             messageCooldown = resetCooldown;
-            Debug.Log(resetCooldown);
+            //Debug.Log(resetCooldown);
         }
     }
 }
