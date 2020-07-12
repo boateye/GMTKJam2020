@@ -10,11 +10,22 @@ public class ButtonListControl : MonoBehaviour
     [SerializeField]
     private GameObject userTemplate;
     public float messageCooldown;
+    /// <summary>
+    /// Change this to make the wave more intense. The lower the number the greater the intensity
+    /// </summary>
+    public float waveSeverity = 1;
     public string testMessage;
     float resetCooldown;
     private string chatMessages;
     TextMeshProUGUI chatWindow;
     public ArrayList chatBus = new ArrayList();
+
+    private IEnumerator FirstWaveCoroutine;
+    private IEnumerator SecondWaveCoroutine;
+    private IEnumerator ThirdWaveCoroutine;
+    private IEnumerator ForthWaveCoroutine;
+
+    //public IEnumerator FirstWaveCoroutine { get => firstWaveCoroutine; set => firstWaveCoroutine = value; }
 
     private void Start()
     {
@@ -30,6 +41,11 @@ public class ButtonListControl : MonoBehaviour
         //    GameObject user = Instantiate(userTemplate) as GameObject;
         //    Debug.Log("My name is: " + user.GetComponent<ChatUser>().userName);
         //}
+
+        FirstWaveCoroutine = StartWave(33,5);
+        SecondWaveCoroutine = StartWave(99,5);
+        ThirdWaveCoroutine = StartWave(122,5);
+        ForthWaveCoroutine = StartWave(139,5);
     }
 
     private void Update()
@@ -59,6 +75,22 @@ public class ButtonListControl : MonoBehaviour
             //Debug.Log(resetCooldown);
         }
     }
+ 
 
-    
+    /// <summary>
+    /// Starts chat wave. 
+    /// Use wait time to determine how many seconds into gameplay the wave starts.
+    /// Use surge time to determine how long the surge lasts
+    /// </summary>
+    /// <param name="waitTime"></param>
+    /// <param name="surgeTime"></param>
+    /// <returns></returns>
+    private IEnumerator StartWave(float waitTime,float surgeTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        messageCooldown = waveSeverity;
+        yield return new WaitForSeconds(surgeTime);
+        messageCooldown = resetCooldown;
+    }
+
 }

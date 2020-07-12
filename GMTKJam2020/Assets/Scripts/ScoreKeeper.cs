@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 using System;
 using System.IO;
 
@@ -9,6 +11,7 @@ public class ScoreKeeper : MonoBehaviour
     private const string PrefabName = "Score_Keeper";
 
     private static ScoreKeeper skInstance = null;
+    public static TextMeshProUGUI ViewerCountText;
 
     /// <summary>
     /// Gets the instance of the ScoreKeeper.
@@ -284,12 +287,12 @@ public class ScoreKeeper : MonoBehaviour
         }
     }
 
-    public static int CalculateViewCount()
+    public static void CalculateViewCount()
     {
         int totalScore;
         totalScore = GOODSCORE - BADSCORE;
         VIEWERCOUNT = totalScore * viewerCountMultiplier;
-        return totalScore;
+        ViewerCountText.text = VIEWERCOUNT.ToString();
     }
 
     public void DeleteFromList(string nameToDelete)
@@ -305,6 +308,6 @@ public class ScoreKeeper : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        CalculateViewCount();
     }
 }

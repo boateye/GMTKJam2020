@@ -20,8 +20,6 @@ public class ButtonListButton : MonoBehaviour
     public void InitializeButtonText()
     {
         SetText(chatUser.GetComponent<ChatUser>().userName + ": " + chatUser.GetComponent<ChatUser>().ChooseRandomizedMessage());
-        //Debug.Log(chatUser.GetComponent<ChatUser>().userName);
-        Debug.Log(chatUser.GetComponent<ChatUser>().relationshipID);
     }
     
     /// <summary>
@@ -37,6 +35,14 @@ public class ButtonListButton : MonoBehaviour
     /// </summary>
     public void messageDelete()
     {
+        if (chatUser.GetComponent<ChatUser>().isGood)
+        {
+            ScoreKeeper.GOODSCORE++;
+        }
+        else
+        {
+            ScoreKeeper.BADSCORE++;
+        }
         SetText("message deleted");
         GetComponent<Button>().interactable = false;
         actionPopup.SetActive(false);
@@ -46,6 +52,14 @@ public class ButtonListButton : MonoBehaviour
     /// </summary>
     public void messageWarn()
     {
+        if (chatUser.GetComponent<ChatUser>().isGood)
+        {
+            ScoreKeeper.GOODSCORE++;
+        }
+        else
+        {
+            ScoreKeeper.BADSCORE++;
+        }
         GetComponent<Image>().color = Color.red;
         GetComponent<Button>().interactable = false;
         actionPopup.SetActive(false);
