@@ -7,7 +7,7 @@ public class SpriteAnimator : MonoBehaviour
     [SerializeField] private Sprite[] frameArray;
     private int currentFrame;
     private float timer;
-    private float framerate = .1f;
+    private float framerate = .2f;
     private SpriteRenderer spriteRenderer;
 
 
