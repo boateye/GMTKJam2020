@@ -43,7 +43,7 @@ public class ChatDisplay : MonoBehaviour
             chatBus.Clear();
             chatWindow.text = chatMessages;
             messageCooldown = resetCooldown;
-            Debug.Log(resetCooldown);
+            //Debug.Log(resetCooldown);
             //displays message once cooldown hits/goes below 0 then resets cooldown
 
 

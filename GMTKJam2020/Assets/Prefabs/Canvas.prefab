@@ -50,6 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeMessage: {fileID: 0}
+  messageComponent: {fileID: 0}
 --- !u!1 &99755603072205950
 GameObject:
   m_ObjectHideFlags: 0
@@ -612,7 +613,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6041749754260856846}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 952255645}
+        m_MethodName: ActionWarn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3028120966681491546
 GameObject:
   m_ObjectHideFlags: 0
@@ -805,8 +817,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -10, y: 0.000000032014214}
-  m_SizeDelta: {x: 20, y: 606.0023}
+  m_AnchoredPosition: {x: -10, y: 0.000020266}
+  m_SizeDelta: {x: 20, y: 595.9999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &105159148608592193
 CanvasRenderer:
@@ -1167,7 +1179,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1189880208297731940}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 952255645}
+        m_MethodName: ActionDelete
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4570501618448742917
 GameObject:
   m_ObjectHideFlags: 0
@@ -1751,6 +1774,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myText: {fileID: 6913792462913373048}
   actionPopup: {fileID: 952255643}
+  chatUser: {fileID: 0}
 --- !u!1 &8929824308921420790
 GameObject:
   m_ObjectHideFlags: 0
@@ -1788,7 +1812,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000030517578, y: -303}
+  m_AnchoredPosition: {x: -0.000030517578, y: -298}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &932147576735627864
@@ -1906,7 +1930,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: -107.70001, y: 0}
-  m_SizeDelta: {x: 215.39996, y: 606}
+  m_SizeDelta: {x: 215.39996, y: 596}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &656513835454670636
 CanvasRenderer:
@@ -1988,5 +2012,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonTemplate: {fileID: 8912071976285933006}
+  userTemplate: {fileID: 0}
   messageCooldown: 3
   testMessage: 'xXSasukeXx: NERF THIS!'
