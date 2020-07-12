@@ -26,11 +26,12 @@ public class ButtonListControl : MonoBehaviour
 	{
 		get
 		{
-            currentCooldown = 0;
-            while (currentCooldown < messageCooldown)
+            //currentCooldown = 0;
+            /*while (currentCooldown < messageCooldown)
 			{
                 currentCooldown += Time.deltaTime;
-            }
+            }*/
+            yield return new WaitForSeconds(messageCooldown);
 
 			GameObject button = Instantiate(buttonTemplate) as GameObject;
 			button.GetComponent<ButtonListButton>().chatUser.GetComponent<ChatUser>().ChooseRandomizedAttributes();
@@ -40,7 +41,7 @@ public class ButtonListControl : MonoBehaviour
 
 			StartCoroutine(Cooldown);
 
-            yield return new WaitForEndOfFrame();
+            //yield return new WaitForEndOfFrame();
         }
 	}
 
