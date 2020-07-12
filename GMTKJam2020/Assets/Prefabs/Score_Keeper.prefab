@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5038394267503817481}
+  - component: {fileID: 582649531}
   m_Layer: 0
   m_Name: Score_Keeper
   m_TagString: Untagged
@@ -30,3 +31,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &582649531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4326366564843685503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 665b647a70f3bef4da4dba0551e2c65d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SFX:
+  - {fileID: 8300000, guid: 1485256694aea694a89767c4e699d621, type: 3}
+  - {fileID: 8300000, guid: 5e4dd0ea43d43e5478f5dbd858cc39ed, type: 3}
+  - {fileID: 8300000, guid: 3aec1c4e27ab4784a9ff5a258cf587bd, type: 3}
+  ViewerCountText: {fileID: 0}

@@ -27,4 +27,9 @@ public class ActionPopupController : MonoBehaviour
     {
         activeMessage.GetComponent<ButtonListButton>().messageWarn();
     }
+
+    public void ActionBan()
+    {
+        activeMessage.GetComponent<ButtonListButton>().messageBan();
+    }
 }

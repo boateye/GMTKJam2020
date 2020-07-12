@@ -73,7 +73,7 @@ public class ScoreKeeper : MonoBehaviour
         }
         
         // initialize scores
-        GOODSCORE = 0;
+        GOODSCORE = 13;
         BADSCORE = 0;
 
         PopulateLists();

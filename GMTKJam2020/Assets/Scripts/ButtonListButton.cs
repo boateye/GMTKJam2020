@@ -11,6 +11,8 @@ public class ButtonListButton : MonoBehaviour
     [SerializeField]
     private GameObject actionPopup;
     public GameObject chatUser;
+    public List<AudioClip> SFX = new List<AudioClip>();
+    public AudioSource audioSource;
 
     public void SetText(string textString)
     {
@@ -46,6 +48,10 @@ public class ButtonListButton : MonoBehaviour
         SetText("message deleted");
         GetComponent<Button>().interactable = false;
         actionPopup.SetActive(false);
+
+        audioSource = audioSource.GetComponent<AudioSource>();
+        audioSource.PlayOneShot(SFX[1]);
+        
     }
     /// <summary>
     /// This function warns the user, giving them a chance to redeem themselves.
@@ -63,6 +69,7 @@ public class ButtonListButton : MonoBehaviour
         GetComponent<Image>().color = Color.red;
         GetComponent<Button>().interactable = false;
         actionPopup.SetActive(false);
+        audioSource.PlayOneShot(SFX[2]);
     }
     /// <summary>
     /// This function bans the user from chat, disabling them from being able to chat in the future.
@@ -84,5 +91,6 @@ public class ButtonListButton : MonoBehaviour
         ScoreKeeper.DeleteNameFromList(chatUser.GetComponent<ChatUser>().userName);
         GetComponent<Button>().interactable = false;
         actionPopup.SetActive(false);
+        audioSource.PlayOneShot(SFX[0]);
     }
 }
