@@ -226,6 +226,16 @@ public class NamesAndMessages : MonoBehaviour
         }
     }
 
+    public void DeleteFromList(string nameToDelete)
+	{
+
+	}
+
+    public void AddNameToList(string nameToAdd)
+	{
+
+	}
+
     // Update is called once per frame
     void Update()
     {

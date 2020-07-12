@@ -10,16 +10,18 @@ public class ButtonListButton : MonoBehaviour
     private TextMeshProUGUI myText;
     [SerializeField]
     private GameObject actionPopup;
-    [SerializeField]
-    private GameObject chatUser;
-    public void Awake()
-    {
+    public GameObject chatUser;
 
-    }
     public void SetText(string textString)
     {
         myText.text = textString;
     }
+
+    public void Awake()
+    {
+        SetText(chatUser.GetComponent<ChatUser>().userName + ": " + chatUser.GetComponent<ChatUser>().ChooseRandomizedMessage());
+    }
+    
     /// <summary>
     /// Called when the chat element is clicked
     /// </summary>
@@ -53,8 +55,16 @@ public class ButtonListButton : MonoBehaviour
     {
         // check popularity, if high bad points to scorekeeper
         // check message favorability, if low good points to scorekeeper
+        if(chatUser.GetComponent<ChatUser>().isGood)
+		{
+            ScoreKeeper.GOODSCORE++;
+		}
+        else
+		{
+            ScoreKeeper.BADSCORE++;
+		}
         GetComponent<Image>().color = Color.red;
-        SetText(chatUser + " has been banned");
+        SetText(chatUser.GetComponent<ChatUser>().userName + ": has been banned");
         GetComponent<Button>().interactable = false;
         actionPopup.SetActive(false);
     }

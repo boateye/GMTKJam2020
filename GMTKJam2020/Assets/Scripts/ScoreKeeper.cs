@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using System.IO;
 
 public class ScoreKeeper : MonoBehaviour
 {
@@ -22,10 +24,21 @@ public class ScoreKeeper : MonoBehaviour
         }
     }
 
-	/// <summary>
-	/// This determines by how much the base score is multiplied by to display the viewer count
-	/// </summary>
-	[SerializeField]
+    public static ArrayList usernameList = new ArrayList();
+    public static ArrayList beliefList = new ArrayList();
+    public static ArrayList chatcommandsList = new ArrayList();
+    public static ArrayList disbeliefList = new ArrayList();
+    public static ArrayList emoticonsList = new ArrayList();
+    public static ArrayList genericList = new ArrayList();
+    public static ArrayList greetingsList = new ArrayList();
+    public static ArrayList hashtagsList = new ArrayList();
+    public static ArrayList linksList = new ArrayList();
+    public static ArrayList spamlinksList = new ArrayList();
+
+    /// <summary>
+    /// This determines by how much the base score is multiplied by to display the viewer count
+    /// </summary>
+    [SerializeField]
     private static int viewerCountMultiplier = 43;
     
     /// <summary>
@@ -61,13 +74,235 @@ public class ScoreKeeper : MonoBehaviour
         BADSCORE = 0; 
     }
 
+    // Start is called before the first frame update
+    void Start()
+    {
+        // iterate through each list of messages and add them to the appropriate arrays.
+        try
+        {
+            // Create an instance of StreamReader to read from a file.
+            using (StreamReader sr = new StreamReader("Assets/Lists/belief.txt"))
+            {
+                string line;
+                // Read and display lines from the file until the end of
+                // the file is reached.
+                while ((line = sr.ReadLine()) != null)
+                {
+                    beliefList.Add(line);
+                    Debug.Log(line);
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            // Let the user know what went wrong.
+            Debug.Log("This file could not be read:" + e.Message);
+        }
+        try
+        {
+            // Create an instance of StreamReader to read from a file.
+            using (StreamReader sr = new StreamReader("Assets/Lists/chatcommands.txt"))
+            {
+                string line;
+                // Read and display lines from the file until the end of
+                // the file is reached.
+                while ((line = sr.ReadLine()) != null)
+                {
+                    chatcommandsList.Add(line);
+                    //Debug.Log(line);
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            // Let the user know what went wrong.
+            Debug.Log("This file could not be read:" + e.Message);
+        }
+        try
+        {
+            // Create an instance of StreamReader to read from a file.
+            using (StreamReader sr = new StreamReader("Assets/Lists/disbelief.txt"))
+            {
+                string line;
+                // Read and display lines from the file until the end of
+                // the file is reached.
+                while ((line = sr.ReadLine()) != null)
+                {
+                    disbeliefList.Add(line);
+                    //Debug.Log(line);
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            // Let the user know what went wrong.
+            Debug.Log("This file could not be read:" + e.Message);
+        }
+        try
+        {
+            // Create an instance of StreamReader to read from a file.
+            using (StreamReader sr = new StreamReader("Assets/Lists/emoticons.txt"))
+            {
+                string line;
+                // Read and display lines from the file until the end of
+                // the file is reached.
+                while ((line = sr.ReadLine()) != null)
+                {
+                    emoticonsList.Add(line);
+                    //Debug.Log(line);
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            // Let the user know what went wrong.
+            Debug.Log("This file could not be read:" + e.Message);
+        }
+        try
+        {
+            // Create an instance of StreamReader to read from a file.
+            using (StreamReader sr = new StreamReader("Assets/Lists/generic.txt"))
+            {
+                string line;
+                // Read and display lines from the file until the end of
+                // the file is reached.
+                while ((line = sr.ReadLine()) != null)
+                {
+                    genericList.Add(line);
+                    //Debug.Log(line);
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            // Let the user know what went wrong.
+            Debug.Log("This file could not be read:" + e.Message);
+        }
+        try
+        {
+            // Create an instance of StreamReader to read from a file.
+            using (StreamReader sr = new StreamReader("Assets/Lists/greetings.txt"))
+            {
+                string line;
+                // Read and display lines from the file until the end of
+                // the file is reached.
+                while ((line = sr.ReadLine()) != null)
+                {
+                    greetingsList.Add(line);
+                    //Debug.Log(line);
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            // Let the user know what went wrong.
+            Debug.Log("This file could not be read:" + e.Message);
+        }
+        try
+        {
+            // Create an instance of StreamReader to read from a file.
+            using (StreamReader sr = new StreamReader("Assets/Lists/hashtags.txt"))
+            {
+                string line;
+                // Read and display lines from the file until the end of
+                // the file is reached.
+                while ((line = sr.ReadLine()) != null)
+                {
+                    hashtagsList.Add(line);
+                    //Debug.Log(line);
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            // Let the user know what went wrong.
+            Debug.Log("This file could not be read:" + e.Message);
+        }
+        try
+        {
+            // Create an instance of StreamReader to read from a file.
+            using (StreamReader sr = new StreamReader("Assets/Lists/links.txt"))
+            {
+                string line;
+                // Read and display lines from the file until the end of
+                // the file is reached.
+                while ((line = sr.ReadLine()) != null)
+                {
+                    linksList.Add(line);
+                    //Debug.Log(line);
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            // Let the user know what went wrong.
+            Debug.Log("This file could not be read:" + e.Message);
+        }
+        try
+        {
+            // Create an instance of StreamReader to read from a file.
+            using (StreamReader sr = new StreamReader("Assets/Lists/spamlinks.txt"))
+            {
+                string line;
+                // Read and display lines from the file until the end of
+                // the file is reached.
+                while ((line = sr.ReadLine()) != null)
+                {
+                    spamlinksList.Add(line);
+                    //Debug.Log(line);
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            // Let the user know what went wrong.
+            Debug.Log("This file could not be read:" + e.Message);
+        }
+
+        // iterate through the list of screennames and add them to usernameList
+        try
+        {
+            // Create an instance of StreamReader to read from a file.
+            using (StreamReader sr = new StreamReader("Assets/Lists/screennames.txt"))
+            {
+                string line;
+                // Read and display lines from the file until the end of
+                // the file is reached.
+                while ((line = sr.ReadLine()) != null)
+                {
+                    usernameList.Add(line);
+                    //Debug.Log(line);
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            // Let the user know what went wrong.
+            Debug.Log("This file could not be read:" + e.Message);
+        }
+    }
+
     public static int CalculateViewCount()
     {
-        int totalScore; 
-        totalScore = GOODSCORE + BADSCORE;
-        totalScore /= 2;
+        int totalScore;
+        totalScore = GOODSCORE - BADSCORE;
         VIEWERCOUNT = totalScore * viewerCountMultiplier;
         return totalScore;
     }
 
+    public void DeleteFromList(string nameToDelete)
+    {
+
+    }
+
+    public void AddNameToList(string nameToAdd)
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 }

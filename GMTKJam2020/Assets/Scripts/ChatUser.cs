@@ -38,12 +38,84 @@ public class ChatUser : MonoBehaviour
         Viewer
     }
 
+    public enum MessageTypeID
+	{
+        Belief,
+        Command,
+        Disbelief,
+        Emoticon,
+        Generic,
+        Greetings,
+        Hashtags,
+        Links,
+        SpamLinks
+	}
+
     public RelationshipID relationshipID;
     public PersonalityID personalityID;
     public UserTypeID userTypeID;
+    public MessageTypeID messageTypeID;
+    public bool isGood = false;
+
+    public string ChooseRandomizedMessage()
+    {
+        int r = Random.Range(2, 10);
+        string messageToSend;
+        switch (r)
+        {
+
+            case 2:
+                messageToSend = ScoreKeeper.beliefList[Random.Range(0, ScoreKeeper.beliefList.Count)].ToString();
+                messageTypeID = MessageTypeID.Belief;
+                isGood = false;
+                return messageToSend;
+            case 3:
+                messageToSend = ScoreKeeper.chatcommandsList[Random.Range(0, ScoreKeeper.chatcommandsList.Count)].ToString();
+                messageTypeID = MessageTypeID.Command;
+                return messageToSend;
+            case 4:
+                messageToSend = ScoreKeeper.disbeliefList[Random.Range(0, ScoreKeeper.disbeliefList.Count)].ToString();
+                messageTypeID = MessageTypeID.Disbelief;
+                isGood = true;
+                return messageToSend;
+            case 5:
+                messageToSend = ScoreKeeper.emoticonsList[Random.Range(0, ScoreKeeper.emoticonsList.Count)].ToString();
+                messageTypeID = MessageTypeID.Emoticon;
+                return messageToSend;
+            case 6:
+                messageToSend = ScoreKeeper.genericList[Random.Range(0, ScoreKeeper.genericList.Count)].ToString();
+                messageTypeID = MessageTypeID.Generic;
+                isGood = false;
+                return messageToSend;
+            case 7:
+                messageToSend = ScoreKeeper.greetingsList[Random.Range(0, ScoreKeeper.greetingsList.Count)].ToString();
+                messageTypeID = MessageTypeID.Greetings;
+                isGood = false;
+                return messageToSend;
+            case 8:
+                messageToSend = ScoreKeeper.hashtagsList[Random.Range(0, ScoreKeeper.hashtagsList.Count)].ToString();
+                messageTypeID = MessageTypeID.Hashtags;
+                return messageToSend;
+            case 9:
+                messageToSend = ScoreKeeper.linksList[Random.Range(0, ScoreKeeper.linksList.Count)].ToString();
+                messageTypeID = MessageTypeID.Links;
+                isGood = false;
+                return messageToSend;
+            case 10:
+                messageToSend = ScoreKeeper.spamlinksList[Random.Range(0, ScoreKeeper.spamlinksList.Count)].ToString();
+                messageTypeID = MessageTypeID.SpamLinks;
+                isGood = true;
+                return messageToSend;
+            default:
+                Debug.Log("no message found. check RandomMessage()");
+                break;
+        }
+
+        return "no message found. check RandomMessage()";
+    }
 
     // Start is called before the first frame update
-    public void Start()
+    public void Awake()
     {
         int t = Random.Range(1, 4);
         switch (t)
@@ -107,24 +179,6 @@ public class ChatUser : MonoBehaviour
         //namesAndMessages.GetComponent<NamesAndMessages>().usernameList.RemoveAt(selectedUsernameIndex);
         //Debug.Log("My username is: " + userName + " and i am the " + relationshipID + " " + userTypeID + " " + personalityID);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (messageInterval > 0)
-        {
-            messageInterval -= Time.deltaTime;
-        }
-
-        else if (messageInterval <= 0)
-        {
-            // Displays message once cooldown hits/goes below 0 then resets cooldown
-
-            string testMessage = namesAndMessages.GetComponent<NamesAndMessages>().greetingsList[Random.Range(0,10)].ToString();
-            ArrayList chatBus = buttonListControl.GetComponent<ButtonListControl>().chatBus;
-            chatBus.Add(testMessage);
-            messageInterval = resetInterval;
-            //Debug.Log(resetCooldown);
-        }
-    }
+    
+    
 }

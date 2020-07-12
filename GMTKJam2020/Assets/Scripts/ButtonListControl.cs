@@ -46,12 +46,9 @@ public class ButtonListControl : MonoBehaviour
             chatBus.Add(testMessage);
             foreach (string newMessage in chatBus)
             {
-                
+                // spawns button with randomized message
                 GameObject button = Instantiate(buttonTemplate) as GameObject;
                 button.SetActive(true);
-
-                button.GetComponent<ButtonListButton>().SetText(newMessage);
-
                 button.transform.SetParent(buttonTemplate.transform.parent, false);
             }
             chatBus.Clear();
@@ -60,4 +57,6 @@ public class ButtonListControl : MonoBehaviour
             //Debug.Log(resetCooldown);
         }
     }
+
+    
 }
