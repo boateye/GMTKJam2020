@@ -6,6 +6,7 @@ public class ChatUser : MonoBehaviour
 {
     public string userName;
     public float messageInterval;
+    private float resetInterval;
     [SerializeField]
     public GameObject namesAndMessages;
     [SerializeField]
@@ -97,6 +98,8 @@ public class ChatUser : MonoBehaviour
                 personalityID = PersonalityID.Troll;
                 break;
         }
+        Debug.Log(messageInterval);
+        resetInterval = messageInterval;
         // 'Rolls' on the screenname list and assigns it to this instance of the gameobject, then removes that name from the list.
         //remainingUsernameCount = namesAndMessages.GetComponent<NamesAndMessages>().usernameList.Count;
         //selectedUsernameIndex = Random.Range(0, remainingUsernameCount);
@@ -117,23 +120,10 @@ public class ChatUser : MonoBehaviour
         {
             // Displays message once cooldown hits/goes below 0 then resets cooldown
 
-            string testMessage = namesAndMessages.GetComponent<NamesAndMessages>().greetingsList[0].ToString();
-            
-            buttonListControl.GetComponent<ButtonListControl>().ch
+            string testMessage = namesAndMessages.GetComponent<NamesAndMessages>().greetingsList[Random.Range(0,10)].ToString();
+            ArrayList chatBus = buttonListControl.GetComponent<ButtonListControl>().chatBus;
             chatBus.Add(testMessage);
-            foreach (string newMessage in chatBus)
-            {
-
-                GameObject button = Instantiate(buttonTemplate) as GameObject;
-                button.SetActive(true);
-
-                button.GetComponent<ButtonListButton>().SetText(newMessage);
-
-                button.transform.SetParent(buttonTemplate.transform.parent, false);
-            }
-            chatBus.Clear();
-            //chatWindow.text = chatMessages;
-            messageInterval = resetCooldown;
+            messageInterval = resetInterval;
             //Debug.Log(resetCooldown);
         }
     }
