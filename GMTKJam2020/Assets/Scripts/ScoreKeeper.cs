@@ -22,22 +22,27 @@ public class ScoreKeeper : MonoBehaviour
         }
     }
 
+	/// <summary>
+	/// This determines by how much the base score is multiplied by to display the viewer count
+	/// </summary>
+	[SerializeField]
+    private static int viewerCountMultiplier = 43;
+    
     /// <summary>
     /// This increases when the player takes an action that is favorable to the streamers wishes.
     /// </summary>
     public static int GOODSCORE;
+    
     /// <summary>
     /// This increases when the player takes an action that is against the streamers wishes.
     /// </summary>
     public static int BADSCORE;
+    
     /// <summary>
     /// Keeps track of the view count to be displayed to the player
     /// </summary>
-    public static int VIEWCOUNT;
-    /// <summary>
-    /// Final calculated score. We will use this to rank the player
-    /// </summary>
-    public static int CALCULATEDSCORE;
+    public static int VIEWERCOUNT;
+    
     /// <summary>
     /// Assigns this instance to singleton instance, stops it from getting destroyed and initalizes variables.
     /// </summary>
@@ -51,17 +56,17 @@ public class ScoreKeeper : MonoBehaviour
             Destroy(gameObject);
         }
         
-
         // initialize scores
         GOODSCORE = 0;
         BADSCORE = 0; 
     }
 
-    public static int CalculateScore()
+    public static int CalculateViewCount()
     {
         int totalScore; 
         totalScore = GOODSCORE + BADSCORE;
         totalScore /= 2;
+        VIEWERCOUNT = totalScore * viewerCountMultiplier;
         return totalScore;
     }
 
