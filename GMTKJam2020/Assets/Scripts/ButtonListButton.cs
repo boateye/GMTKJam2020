@@ -6,10 +6,10 @@ using TMPro;
 
 public class ButtonListButton : MonoBehaviour
 {
+    //[SerializeField]
+    //private Text myText; 
     [SerializeField]
-    private Text myText; 
-    [SerializeField]
-    //private TextMeshProUGUI myText;
+    private TextMeshProUGUI myText;
     [SerializeField]
     private GameObject actionPopup;
     public GameObject chatUser;
