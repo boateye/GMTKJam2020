@@ -6,6 +6,7 @@ public class ChatUser : MonoBehaviour
 {
     public string userName;
     public float messageInterval;
+    public GameObject namesAndMessages;
 
     public enum RelationshipID
     {
@@ -88,6 +89,8 @@ public class ChatUser : MonoBehaviour
                 personalityID = PersonalityID.Self_Police;
                 break;
         }
+
+        namesAndMessages.GetComponent<NamesAndMessages>()
     }
 
     // Update is called once per frame

@@ -670,6 +670,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   userName: 
   messageInterval: 0
+  namesAndMessages: {fileID: 169593956}
   relationshipID: 0
   personalityID: 0
   userTypeID: 0
