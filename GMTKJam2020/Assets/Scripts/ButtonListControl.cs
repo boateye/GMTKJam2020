@@ -14,47 +14,53 @@ public class ButtonListControl : MonoBehaviour
     /// Change this to make the wave more intense. The lower the number the greater the intensity
     /// </summary>
     public float waveSeverity = 1;
+    private float currentCooldown;
     public string testMessage;
     float resetCooldown;
     private string chatMessages;
     TextMeshProUGUI chatWindow;
     public ArrayList chatBus = new ArrayList();
 
-    private IEnumerator InitialCoroutine;
-    private IEnumerator FirstWaveCoroutine;
-    private IEnumerator SecondWaveCoroutine;
-    private IEnumerator ThirdWaveCoroutine;
-    private IEnumerator ForthWaveCoroutine;
+ ;
+    private IEnumerator Cooldown
+	{
+		get
+		{
+			currentCooldown = 0;
 
-    //public IEnumerator FirstWaveCoroutine { get => firstWaveCoroutine; set => firstWaveCoroutine = value; }
+            yield return new WaitForSeconds(messageCooldown);
 
-    private void Start()
+			GameObject button = Instantiate(buttonTemplate) as GameObject;
+			button.GetComponent<ButtonListButton>().chatUser.GetComponent<ChatUser>().ChooseRandomizedAttributes();
+			button.GetComponent<ButtonListButton>().InitializeButtonText();
+			button.SetActive(true);
+			button.transform.SetParent(buttonTemplate.transform.parent, false);
+
+			StartCoroutine(Cooldown);
+
+		}
+	}
+
+	private void Start()
     {
+        waveSeverity = 3;
         resetCooldown = messageCooldown;
-        //chatWindow = GetComponent<TextMeshProUGUI>();
-        chatMessages = "Welcome to my chat room!";
-        // chatWindow.text = chatMessages;
-        // Debug.Log(resetCooldown);
-
-        // create 5 'main' users spawners
-        //for (int i = 1; i <=5; i++)
-        //{
-        //    GameObject user = Instantiate(userTemplate) as GameObject;
-        //    Debug.Log("My name is: " + user.GetComponent<ChatUser>().userName);
-        //}
+        StartCoroutine(Cooldown);
 
         waveSeverity = 3; 
 
-        InitialCoroutine = StartWave(1,32);
-        FirstWaveCoroutine = StartWave(33,5);
-        SecondWaveCoroutine = StartWave(99,5);
-        ThirdWaveCoroutine = StartWave(122,5);
-        ForthWaveCoroutine = StartWave(139,5);
+        //InitialCoroutine = StartWave(1,32);
+        //FirstWaveCoroutine = StartWave(33,5);
+        //SecondWaveCoroutine = StartWave(99,5);
+        //ThirdWaveCoroutine = StartWave(122,5);
+        //ForthWaveCoroutine = StartWave(139,5);
+    
+
     }
 
     private void Update()
     {
-        if (messageCooldown > 0)    
+        /*if (messageCooldown > 0)    
         {
             messageCooldown -= Time.deltaTime;
         }
@@ -74,7 +80,7 @@ public class ButtonListControl : MonoBehaviour
 
             //chatWindow.text = chatMessages;
             messageCooldown = resetCooldown;
-        }
+        }*/
     }
  
 
