@@ -6,8 +6,12 @@ public class ChatUser : MonoBehaviour
 {
     public string userName;
     public float messageInterval;
+    [SerializeField]
     public GameObject namesAndMessages;
-
+    [SerializeField]
+    public GameObject buttonListControl;
+    private int remainingUsernameCount;
+    private int selectedUsernameIndex;
     public enum RelationshipID
     {
         Enemy,
@@ -21,7 +25,8 @@ public class ChatUser : MonoBehaviour
         Simp,
         Hater,
         Debater,
-        Self_Police
+        Self_Police,
+        Troll
     }
 
     public enum UserTypeID
@@ -37,9 +42,9 @@ public class ChatUser : MonoBehaviour
     public UserTypeID userTypeID;
 
     // Start is called before the first frame update
-    public void Awaken()
+    public void Start()
     {
-        int t = Random.Range(1,4);
+        int t = Random.Range(1, 4);
         switch (t)
         {
             case 1:
@@ -56,7 +61,7 @@ public class ChatUser : MonoBehaviour
                 break;
         }
 
-        int r = Random.Range(1,3);
+        int r = Random.Range(1, 3);
         switch (r)
         {
             case 1:
@@ -70,7 +75,7 @@ public class ChatUser : MonoBehaviour
                 break;
         }
 
-        int p = Random.Range(1,5);
+        int p = Random.Range(1, 5);
         switch (p)
         {
             case 1:
@@ -88,14 +93,48 @@ public class ChatUser : MonoBehaviour
             case 5:
                 personalityID = PersonalityID.Self_Police;
                 break;
+            case 6:
+                personalityID = PersonalityID.Troll;
+                break;
         }
-
-        namesAndMessages.GetComponent<NamesAndMessages>()
+        // 'Rolls' on the screenname list and assigns it to this instance of the gameobject, then removes that name from the list.
+        //remainingUsernameCount = namesAndMessages.GetComponent<NamesAndMessages>().usernameList.Count;
+        //selectedUsernameIndex = Random.Range(0, remainingUsernameCount);
+        //userName = namesAndMessages.GetComponent<NamesAndMessages>().usernameList[selectedUsernameIndex].ToString();
+        //namesAndMessages.GetComponent<NamesAndMessages>().usernameList.RemoveAt(selectedUsernameIndex);
+        //Debug.Log("My username is: " + userName + " and i am the " + relationshipID + " " + userTypeID + " " + personalityID);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (messageInterval > 0)
+        {
+            messageInterval -= Time.deltaTime;
+        }
+
+        else if (messageInterval <= 0)
+        {
+            // Displays message once cooldown hits/goes below 0 then resets cooldown
+
+            string testMessage = namesAndMessages.GetComponent<NamesAndMessages>().greetingsList[0].ToString();
+            
+            buttonListControl.GetComponent<ButtonListControl>().ch
+            chatBus.Add(testMessage);
+            foreach (string newMessage in chatBus)
+            {
+
+                GameObject button = Instantiate(buttonTemplate) as GameObject;
+                button.SetActive(true);
+
+                button.GetComponent<ButtonListButton>().SetText(newMessage);
+
+                button.transform.SetParent(buttonTemplate.transform.parent, false);
+            }
+            chatBus.Clear();
+            //chatWindow.text = chatMessages;
+            messageInterval = resetCooldown;
+            //Debug.Log(resetCooldown);
+        }
     }
 }

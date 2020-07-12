@@ -14,7 +14,7 @@ public class ButtonListControl : MonoBehaviour
     float resetCooldown;
     private string chatMessages;
     TextMeshProUGUI chatWindow;
-    ArrayList chatBus = new ArrayList();
+    public ArrayList chatBus = new ArrayList();
 
     private void Start()
     {
