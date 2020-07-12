@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class NamesAndMessages : MonoBehaviour
 {
-    ArrayList 
+    ArrayList usernameList = new ArrayList();
+    ArrayList messagesList = new ArrayList();
 
     // Start is called before the first frame update
     void Start()
