@@ -94,7 +94,7 @@ public class ScoreKeeper : MonoBehaviour
                 while ((line = sr.ReadLine()) != null)
                 {
                     beliefList.Add(line);
-                    Debug.Log(line);
+                    //Debug.Log(line);
                 }
             }
         }

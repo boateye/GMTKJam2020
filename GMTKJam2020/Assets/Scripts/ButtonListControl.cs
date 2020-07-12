@@ -13,7 +13,7 @@ public class ButtonListControl : MonoBehaviour
     /// <summary>
     /// Change this to make the wave more intense. The lower the number the greater the intensity
     /// </summary>
-    public float waveSeverity = 1;
+    public float waveSeverity = 0;
     private float currentCooldown;
     public string testMessage;
     float resetCooldown;
@@ -57,7 +57,9 @@ public class ButtonListControl : MonoBehaviour
     {
         currentCooldown = 0;
         yield return new WaitForSeconds(waitTime);
+        StopCoroutine(Cooldown);
         messageCooldown = waveSeverity;
+        StartCoroutine(Cooldown);
         yield return new WaitForSeconds(surgeTime);
         messageCooldown = resetCooldown;
 
@@ -65,13 +67,13 @@ public class ButtonListControl : MonoBehaviour
 
     private void Start()
     {
-        waveSeverity = 3;
+        //waveSeverity = 1;
         resetCooldown = messageCooldown;
         StartCoroutine(Cooldown);
 
-        StartCoroutine(StartWave(1,32));
+        StartCoroutine(StartWave(11,5));
         StartCoroutine(StartWave(33,5));
-        StartCoroutine(StartWave(99,5));
+        StartCoroutine(StartWave(99,10));
         StartCoroutine(StartWave(122,5));
         StartCoroutine(StartWave(139,5));
 
