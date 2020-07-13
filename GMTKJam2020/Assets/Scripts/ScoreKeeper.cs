@@ -83,11 +83,12 @@ public class ScoreKeeper : MonoBehaviour
     // Start is called before the first frame update
     void PopulateLists()
     {
+        string filepath = Application.dataPath;
         // iterate through each list of messages and add them to the appropriate arrays.
         try
         {
             // Create an instance of StreamReader to read from a file.
-            using (StreamReader sr = new StreamReader("Assets/Lists/belief.txt"))
+            using (StreamReader sr = new StreamReader(filepath + "/Lists/belief.txt"))
             {
                 string line;
                 // Read and display lines from the file until the end of
@@ -95,7 +96,7 @@ public class ScoreKeeper : MonoBehaviour
                 while ((line = sr.ReadLine()) != null)
                 {
                     beliefList.Add(line);
-                    //Debug.Log(line);
+                    Debug.Log(line);
                 }
             }
         }
@@ -107,7 +108,7 @@ public class ScoreKeeper : MonoBehaviour
         try
         {
             // Create an instance of StreamReader to read from a file.
-            using (StreamReader sr = new StreamReader("Assets/Lists/chatcommands.txt"))
+            using (StreamReader sr = new StreamReader(filepath + "/Lists/chatcommands.txt"))
             {
                 string line;
                 // Read and display lines from the file until the end of
@@ -127,7 +128,7 @@ public class ScoreKeeper : MonoBehaviour
         try
         {
             // Create an instance of StreamReader to read from a file.
-            using (StreamReader sr = new StreamReader("Assets/Lists/disbelief.txt"))
+            using (StreamReader sr = new StreamReader(filepath + "/Lists/disbelief.txt"))
             {
                 string line;
                 // Read and display lines from the file until the end of
@@ -147,7 +148,7 @@ public class ScoreKeeper : MonoBehaviour
         try
         {
             // Create an instance of StreamReader to read from a file.
-            using (StreamReader sr = new StreamReader("Assets/Lists/emoticons.txt"))
+            using (StreamReader sr = new StreamReader(filepath + "/Lists/emoticons.txt"))
             {
                 string line;
                 // Read and display lines from the file until the end of
@@ -167,7 +168,7 @@ public class ScoreKeeper : MonoBehaviour
         try
         {
             // Create an instance of StreamReader to read from a file.
-            using (StreamReader sr = new StreamReader("Assets/Lists/generic.txt"))
+            using (StreamReader sr = new StreamReader(filepath + "/Lists/generic.txt"))
             {
                 string line;
                 // Read and display lines from the file until the end of
@@ -187,7 +188,7 @@ public class ScoreKeeper : MonoBehaviour
         try
         {
             // Create an instance of StreamReader to read from a file.
-            using (StreamReader sr = new StreamReader("Assets/Lists/greetings.txt"))
+            using (StreamReader sr = new StreamReader(filepath + "/Lists/greetings.txt"))
             {
                 string line;
                 // Read and display lines from the file until the end of
@@ -207,7 +208,7 @@ public class ScoreKeeper : MonoBehaviour
         try
         {
             // Create an instance of StreamReader to read from a file.
-            using (StreamReader sr = new StreamReader("Assets/Lists/hashtags.txt"))
+            using (StreamReader sr = new StreamReader(filepath + "/Lists/hashtags.txt"))
             {
                 string line;
                 // Read and display lines from the file until the end of
@@ -227,7 +228,7 @@ public class ScoreKeeper : MonoBehaviour
         try
         {
             // Create an instance of StreamReader to read from a file.
-            using (StreamReader sr = new StreamReader("Assets/Lists/links.txt"))
+            using (StreamReader sr = new StreamReader(filepath + "/Lists/links.txt"))
             {
                 string line;
                 // Read and display lines from the file until the end of
@@ -247,7 +248,7 @@ public class ScoreKeeper : MonoBehaviour
         try
         {
             // Create an instance of StreamReader to read from a file.
-            using (StreamReader sr = new StreamReader("Assets/Lists/spamlinks.txt"))
+            using (StreamReader sr = new StreamReader(filepath + "/Lists/spamlinks.txt"))
             {
                 string line;
                 // Read and display lines from the file until the end of
@@ -269,7 +270,7 @@ public class ScoreKeeper : MonoBehaviour
         try
         {
             // Create an instance of StreamReader to read from a file.
-            using (StreamReader sr = new StreamReader("Assets/Lists/screennames.txt"))
+            using (StreamReader sr = new StreamReader(filepath + "/Lists/screennames.txt"))
             {
                 string line;
                 // Read and display lines from the file until the end of
