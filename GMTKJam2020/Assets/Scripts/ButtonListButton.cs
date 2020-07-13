@@ -23,8 +23,8 @@ public class ButtonListButton : MonoBehaviour
 
     public void InitializeButtonText()
     {
-        SetText(userName + ": " + chatUser.GetComponent<ChatUser>().ChooseRandomizedMessage());
         userName = chatUser.GetComponent<ChatUser>().userName;
+        SetText(userName + ": " + chatUser.GetComponent<ChatUser>().ChooseRandomizedMessage());
         isMessageGood = chatUser.GetComponent<ChatUser>().isGood;
     }
     
