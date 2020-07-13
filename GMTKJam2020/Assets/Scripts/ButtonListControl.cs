@@ -47,8 +47,8 @@ public class ButtonListControl : MonoBehaviour
 
     private IEnumerator EndGame()
     {
-        //yield return new WaitForSeconds(265);
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(265);
+        //yield return new WaitForSeconds(5);
         //Debug.Log("The video has ended!");
 
         //insert next scene script here
