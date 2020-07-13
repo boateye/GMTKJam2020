@@ -17,11 +17,7 @@ public class ButtonListControl : MonoBehaviour
     private float currentCooldown;
     float resetCooldown;
 
-    private IEnumerator EndGame
-    {
-        yield return new WaitForSeconds(265);
-        //insert next scene script here
-    }
+
     private IEnumerator Cooldown
 	{
 		get
@@ -40,11 +36,17 @@ public class ButtonListControl : MonoBehaviour
 			button.transform.SetParent(buttonTemplate.transform.parent, false);
 
 			StartCoroutine(Cooldown);
-            StartCoroutine(EndGame);
+            
 
             //yield return new WaitForEndOfFrame();
         }
 	}
+
+    private IEnumerator EndGame()
+    {
+        yield return new WaitForSeconds(265);
+        //insert next scene script here
+    }
 
     /// <summary>
     /// Starts chat wave. 
@@ -71,6 +73,7 @@ public class ButtonListControl : MonoBehaviour
     private void Start()
     {
         resetCooldown = messageCooldown;
+        StartCoroutine(EndGame);
         StartCoroutine(Cooldown);
         StartCoroutine(StartWave(33,5));
         StartCoroutine(StartWave(99,5));
