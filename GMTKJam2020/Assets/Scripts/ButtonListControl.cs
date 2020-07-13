@@ -73,7 +73,7 @@ public class ButtonListControl : MonoBehaviour
     private void Start()
     {
         resetCooldown = messageCooldown;
-        StartCoroutine(EndGame);
+        StartCoroutine(EndGame());
         StartCoroutine(Cooldown);
         StartCoroutine(StartWave(33,5));
         StartCoroutine(StartWave(99,5));
