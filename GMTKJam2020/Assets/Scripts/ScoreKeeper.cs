@@ -5,13 +5,14 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 public class ScoreKeeper : MonoBehaviour
 {
     private const string PrefabName = "Score_Keeper";
 
     private static ScoreKeeper skInstance = null;
-    public TextMeshProUGUI ViewerCountText;
+    //public TextMeshProUGUI ViewerCountText;
 
     /// <summary>
     /// Gets the instance of the ScoreKeeper.
@@ -41,8 +42,7 @@ public class ScoreKeeper : MonoBehaviour
     /// <summary>
     /// This determines by how much the base score is multiplied by to display the viewer count
     /// </summary>
-    [SerializeField]
-    private static int viewerCountMultiplier = 43;
+    public static int viewerCountMultiplier = 43;
     
     /// <summary>
     /// This increases when the player takes an action that is favorable to the streamers wishes.
@@ -288,16 +288,6 @@ public class ScoreKeeper : MonoBehaviour
         }
     }
 
-    public void CalculateViewCount()
-    {
-        int totalScore;
-        totalScore = GOODSCORE - BADSCORE;
-        if (totalScore < 0)
-            totalScore = 0;
-        VIEWERCOUNT = totalScore * viewerCountMultiplier;
-        ViewerCountText.text = VIEWERCOUNT.ToString();
-    }
-
     /// <summary>
     /// This function can be improved in the future. Currently, its only use is to delete names when a user is banned.
     /// </summary>
@@ -310,11 +300,5 @@ public class ScoreKeeper : MonoBehaviour
     public void AddNameToList(string nameToAdd)
     {
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        CalculateViewCount();
     }
 }

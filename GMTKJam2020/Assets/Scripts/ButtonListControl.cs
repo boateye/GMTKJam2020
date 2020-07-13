@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+
 public class ButtonListControl : MonoBehaviour
 {
     [SerializeField]
     private GameObject buttonTemplate;
     [SerializeField]
     private GameObject userTemplate;
+    public TextMeshProUGUI ViewerCountText;
+    public SceneChanger sceneChanger;
     public float messageCooldown;
     /// <summary>
     /// Change this to make the wave more intense. The lower the number the greater the intensity
@@ -44,8 +47,12 @@ public class ButtonListControl : MonoBehaviour
 
     private IEnumerator EndGame()
     {
-        yield return new WaitForSeconds(265);
+        //yield return new WaitForSeconds(265);
+        yield return new WaitForSeconds(5);
+        //Debug.Log("The video has ended!");
+
         //insert next scene script here
+        sceneChanger.ChangeScene("ScoreScene");
     }
 
     /// <summary>
@@ -81,5 +88,17 @@ public class ButtonListControl : MonoBehaviour
         StartCoroutine(StartWave(139,5));
 
     }
-
+    public void CalculateViewCount()
+    {
+        int totalScore;
+        totalScore = ScoreKeeper.GOODSCORE - ScoreKeeper.BADSCORE;
+        if (totalScore < 0)
+            totalScore = 0;
+        ScoreKeeper.VIEWERCOUNT = totalScore * ScoreKeeper.viewerCountMultiplier;
+        ViewerCountText.text = ScoreKeeper.VIEWERCOUNT.ToString();
+    }
+    void Update()
+    {
+        CalculateViewCount();
+    }
 }
