@@ -6,8 +6,6 @@ using TMPro;
 
 public class ButtonListButton : MonoBehaviour
 {
-    //[SerializeField]
-    //private Text myText; 
     [SerializeField]
     private TextMeshProUGUI myText;
     [SerializeField]
@@ -15,6 +13,8 @@ public class ButtonListButton : MonoBehaviour
     public GameObject chatUser;
     public List<AudioClip> SFX = new List<AudioClip>();
     public AudioSource audioSource;
+    public string userName;
+    public bool isMessageGood;
 
     public void SetText(string textString)
     {
@@ -23,7 +23,9 @@ public class ButtonListButton : MonoBehaviour
 
     public void InitializeButtonText()
     {
-        SetText(chatUser.GetComponent<ChatUser>().userName + ": " + chatUser.GetComponent<ChatUser>().ChooseRandomizedMessage());
+        SetText(userName + ": " + chatUser.GetComponent<ChatUser>().ChooseRandomizedMessage());
+        userName = chatUser.GetComponent<ChatUser>().userName;
+        isMessageGood = chatUser.GetComponent<ChatUser>().isGood;
     }
     
     /// <summary>
@@ -39,7 +41,7 @@ public class ButtonListButton : MonoBehaviour
     /// </summary>
     public void messageDelete()
     {
-        if (chatUser.GetComponent<ChatUser>().isGood)
+        if (isMessageGood)
         {
             ScoreKeeper.GOODSCORE++;
         }
@@ -60,7 +62,7 @@ public class ButtonListButton : MonoBehaviour
     /// </summary>
     public void messageWarn()
     {
-        if (chatUser.GetComponent<ChatUser>().isGood)
+        if (isMessageGood)
         {
             ScoreKeeper.GOODSCORE++;
         }
@@ -80,7 +82,7 @@ public class ButtonListButton : MonoBehaviour
     {
         // check popularity, if high bad points to scorekeeper
         // check message favorability, if low good points to scorekeeper
-        if(chatUser.GetComponent<ChatUser>().isGood)
+        if(isMessageGood)
 		{
             ScoreKeeper.GOODSCORE++;
 		}
@@ -89,8 +91,8 @@ public class ButtonListButton : MonoBehaviour
             ScoreKeeper.BADSCORE++;
 		}
         GetComponent<Image>().color = Color.red;
-        SetText(chatUser.GetComponent<ChatUser>().userName + ": has been banned");
-        ScoreKeeper.DeleteNameFromList(chatUser.GetComponent<ChatUser>().userName);
+        SetText(userName + ": has been banned");
+        ScoreKeeper.DeleteNameFromList(userName);
         GetComponent<Button>().interactable = false;
         actionPopup.SetActive(false);
         audioSource.PlayOneShot(SFX[0]);

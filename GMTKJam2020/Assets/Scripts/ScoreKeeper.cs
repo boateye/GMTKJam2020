@@ -12,7 +12,6 @@ public class ScoreKeeper : MonoBehaviour
 
     private static ScoreKeeper skInstance = null;
     public TextMeshProUGUI ViewerCountText;
-    //public Text ViewerCountText;
 
     /// <summary>
     /// Gets the instance of the ScoreKeeper.
@@ -58,7 +57,7 @@ public class ScoreKeeper : MonoBehaviour
     /// <summary>
     /// Keeps track of the view count to be displayed to the player
     /// </summary>
-    public static int VIEWERCOUNT = 2020;
+    public static int VIEWERCOUNT;
     
     /// <summary>
     /// Assigns this instance to singleton instance, stops it from getting destroyed and initalizes variables.
@@ -74,7 +73,7 @@ public class ScoreKeeper : MonoBehaviour
         }
         
         // initialize scores
-        GOODSCORE = 13;
+        GOODSCORE = 47;
         BADSCORE = 0;
 
         PopulateLists();
