@@ -4085,6 +4085,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 66.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2087772287, guid: 6e0546ef720a6c94f884ec8bf598cbff, type: 3}
+      propertyPath: messageCooldown
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 509437822241511211, guid: 6e0546ef720a6c94f884ec8bf598cbff,
         type: 3}
       propertyPath: m_Name
