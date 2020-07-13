@@ -12,6 +12,7 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridBrush
+    - UnityEditor.Tilemaps.GridBrushEditor
     - UnityEditor.Tilemaps.GridPaintPaletteClipboard
     - UnityEditor.Tilemaps.GridPaintPaletteWindow
     - UnityEditor.Tilemaps.GridPaintingState
@@ -94,43 +95,43 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12030}
     - Class: 114
-      Script: {instanceID: 12192}
+      Script: {instanceID: 12206}
     - Class: 114
-      Script: {instanceID: 12208}
+      Script: {instanceID: 12260}
     - Class: 114
-      Script: {instanceID: 12262}
+      Script: {instanceID: 12560}
     - Class: 114
-      Script: {instanceID: 12562}
+      Script: {instanceID: 12732}
     - Class: 114
-      Script: {instanceID: 12734}
+      Script: {instanceID: 12950}
     - Class: 114
-      Script: {instanceID: 12952}
+      Script: {instanceID: 13060}
     - Class: 114
-      Script: {instanceID: 13062}
+      Script: {instanceID: 13266}
     - Class: 114
-      Script: {instanceID: 13268}
+      Script: {instanceID: 13284}
     - Class: 114
-      Script: {instanceID: 13286}
+      Script: {instanceID: 13306}
     - Class: 114
-      Script: {instanceID: 13308}
+      Script: {instanceID: 13596}
     - Class: 114
-      Script: {instanceID: 13598}
+      Script: {instanceID: 13698}
     - Class: 114
-      Script: {instanceID: 13700}
+      Script: {instanceID: 13988}
     - Class: 114
-      Script: {instanceID: 13990}
+      Script: {instanceID: 14016}
     - Class: 114
-      Script: {instanceID: 14018}
+      Script: {instanceID: 14030}
     - Class: 114
-      Script: {instanceID: 14032}
+      Script: {instanceID: 14168}
     - Class: 114
-      Script: {instanceID: 14170}
+      Script: {instanceID: 14338}
     - Class: 114
       Script: {instanceID: 14340}
     - Class: 114
-      Script: {instanceID: 14342}
+      Script: {instanceID: 14996}
     - Class: 114
-      Script: {instanceID: 28594}
+      Script: {instanceID: 15010}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -174,7 +175,7 @@ ScriptsOnlyBuild:
     className: TMP_SelectionCaret
   - hash:
       serializedVersion: 2
-      Hash: f1daf4fc6713598f28e9a3dac53bf242
+      Hash: 28a24bb896a8d20944fd50612ff585ff
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ButtonListButton
@@ -606,7 +607,7 @@ ScriptsOnlyBuild:
     className: TMP_TextSelector_A
   - hash:
       serializedVersion: 2
-      Hash: 727410036b29b4f9a1aa8d04e0a1677d
+      Hash: b8f342523df08a6b3ab228e0109d08ee
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ScoreKeeper
