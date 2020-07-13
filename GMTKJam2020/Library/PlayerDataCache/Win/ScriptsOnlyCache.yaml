@@ -12,6 +12,7 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridBrush
+    - UnityEditor.Tilemaps.GridBrushEditor
     - UnityEditor.Tilemaps.GridPaintPaletteClipboard
     - UnityEditor.Tilemaps.GridPaintPaletteWindow
     - UnityEditor.Tilemaps.GridPaintingState
@@ -128,9 +129,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 14340}
     - Class: 114
-      Script: {instanceID: 14996}
+      Script: {instanceID: 15032}
     - Class: 114
-      Script: {instanceID: 15010}
+      Script: {instanceID: 15046}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -174,7 +175,7 @@ ScriptsOnlyBuild:
     className: TMP_SelectionCaret
   - hash:
       serializedVersion: 2
-      Hash: 28a24bb896a8d20944fd50612ff585ff
+      Hash: abaabdd3bbf9abc18e99b2100ca93e8f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ButtonListButton
