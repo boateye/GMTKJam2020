@@ -15,7 +15,6 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridBrush
-    - UnityEditor.Tilemaps.GridBrushEditor
     - UnityEditor.Tilemaps.GridPaintPaletteClipboard
     - UnityEditor.Tilemaps.GridPaintPaletteWindow
     - UnityEditor.Tilemaps.GridPaintingState
@@ -82,51 +81,51 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11230}
     - Class: 114
-      Script: {instanceID: 11484}
+      Script: {instanceID: 11486}
     - Class: 114
-      Script: {instanceID: 11488}
+      Script: {instanceID: 11490}
     - Class: 114
-      Script: {instanceID: 11532}
+      Script: {instanceID: 11534}
     - Class: 114
-      Script: {instanceID: 11542}
+      Script: {instanceID: 11544}
     - Class: 114
-      Script: {instanceID: 11712}
+      Script: {instanceID: 11714}
     - Class: 114
-      Script: {instanceID: 12030}
+      Script: {instanceID: 12032}
     - Class: 114
-      Script: {instanceID: 12206}
+      Script: {instanceID: 12208}
     - Class: 114
-      Script: {instanceID: 12560}
+      Script: {instanceID: 12562}
     - Class: 114
-      Script: {instanceID: 12732}
+      Script: {instanceID: 12734}
     - Class: 114
-      Script: {instanceID: 12950}
+      Script: {instanceID: 12934}
     - Class: 114
-      Script: {instanceID: 13060}
+      Script: {instanceID: 12954}
     - Class: 114
-      Script: {instanceID: 13266}
+      Script: {instanceID: 13064}
     - Class: 114
-      Script: {instanceID: 13306}
+      Script: {instanceID: 13270}
     - Class: 114
-      Script: {instanceID: 13596}
+      Script: {instanceID: 13310}
     - Class: 114
-      Script: {instanceID: 13698}
+      Script: {instanceID: 13600}
     - Class: 114
-      Script: {instanceID: 14016}
+      Script: {instanceID: 13702}
     - Class: 114
-      Script: {instanceID: 14030}
+      Script: {instanceID: 14020}
     - Class: 114
-      Script: {instanceID: 14338}
+      Script: {instanceID: 14034}
     - Class: 114
-      Script: {instanceID: 14340}
+      Script: {instanceID: 14342}
     - Class: 114
-      Script: {instanceID: 14412}
+      Script: {instanceID: 14344}
     - Class: 114
-      Script: {instanceID: 15034}
+      Script: {instanceID: 14416}
     - Class: 114
-      Script: {instanceID: 15048}
+      Script: {instanceID: 15042}
     - Class: 114
-      Script: {instanceID: 25260}
+      Script: {instanceID: 15056}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -164,6 +163,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
@@ -171,21 +174,21 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11194}
     - Class: 114
-      Script: {instanceID: 11542}
+      Script: {instanceID: 11290}
     - Class: 114
-      Script: {instanceID: 12206}
+      Script: {instanceID: 11544}
     - Class: 114
-      Script: {instanceID: 13266}
+      Script: {instanceID: 12208}
     - Class: 114
-      Script: {instanceID: 13596}
+      Script: {instanceID: 13270}
     - Class: 114
-      Script: {instanceID: 13698}
+      Script: {instanceID: 13600}
     - Class: 114
-      Script: {instanceID: 14340}
+      Script: {instanceID: 13702}
     - Class: 114
-      Script: {instanceID: 14412}
+      Script: {instanceID: 14344}
     - Class: 114
-      Script: {instanceID: 15682}
+      Script: {instanceID: 14416}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -219,6 +222,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 109
@@ -228,29 +235,29 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11194}
     - Class: 114
-      Script: {instanceID: 11542}
+      Script: {instanceID: 11544}
     - Class: 114
-      Script: {instanceID: 12206}
+      Script: {instanceID: 12208}
     - Class: 114
-      Script: {instanceID: 12260}
+      Script: {instanceID: 12262}
     - Class: 114
-      Script: {instanceID: 13266}
+      Script: {instanceID: 12934}
     - Class: 114
-      Script: {instanceID: 13284}
+      Script: {instanceID: 13270}
     - Class: 114
-      Script: {instanceID: 13596}
+      Script: {instanceID: 13288}
     - Class: 114
-      Script: {instanceID: 13698}
+      Script: {instanceID: 13600}
     - Class: 114
-      Script: {instanceID: 13988}
+      Script: {instanceID: 13702}
     - Class: 114
-      Script: {instanceID: 14168}
+      Script: {instanceID: 13992}
     - Class: 114
-      Script: {instanceID: 14340}
+      Script: {instanceID: 14172}
     - Class: 114
-      Script: {instanceID: 14412}
+      Script: {instanceID: 14344}
     - Class: 114
-      Script: {instanceID: 25260}
+      Script: {instanceID: 14416}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -304,6 +311,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_Dropdown
+  - hash:
+      serializedVersion: 2
+      Hash: b8f342523df08a6b3ab228e0109d08ee
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DisplayScore
   - hash:
       serializedVersion: 2
       Hash: e7a73f5f78ba6445195ec23b74a1ce2d
@@ -616,6 +629,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ChatController
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ResetScore
   - hash:
       serializedVersion: 2
       Hash: f84d945e5e1ca985698660fc26e9657f
@@ -994,18 +1013,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: b8f342523df08a6b3ab228e0109d08ee
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: DisplayScore
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: ResetScore
   platform: 5
   scenePathNames:
   - Assets/Scenes/TitleScene.unity
