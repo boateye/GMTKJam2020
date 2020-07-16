@@ -50,3 +50,5 @@ MonoBehaviour:
   relationshipID: 0
   personalityID: 0
   userTypeID: 0
+  messageTypeID: 0
+  isGood: 0

@@ -43,8 +43,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 665b647a70f3bef4da4dba0551e2c65d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SFX:
-  - {fileID: 8300000, guid: 1485256694aea694a89767c4e699d621, type: 3}
-  - {fileID: 8300000, guid: 5e4dd0ea43d43e5478f5dbd858cc39ed, type: 3}
-  - {fileID: 8300000, guid: 3aec1c4e27ab4784a9ff5a258cf587bd, type: 3}
-  ViewerCountText: {fileID: 0}
