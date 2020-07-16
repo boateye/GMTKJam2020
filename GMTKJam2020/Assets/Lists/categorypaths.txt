@@ -1,9 +1,3 @@
-Assets/Lists/belief.txt
-Assets/Lists/chatcommands.txt
-Assets/Lists/disbelief.txt
-Assets/Lists/emoticons.txt
-Assets/Lists/generic.txt
-Assets/Lists/greetings.txt
-Assets/Lists/hashtags.txt
-Assets/Lists/links.txt
-Assets/Lists/spamlinks.txt
+version https://git-lfs.github.com/spec/v1
+oid sha256:9eaa24bfe7e12ad7c74ad7e04825c88aa4514121aaae2c8a053bd2b5d9d5900d
+size 235

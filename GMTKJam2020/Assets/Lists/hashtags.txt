@@ -1,9 +1,3 @@
-#fakenews
-#coldtruthnews
-#truefacts
-#DemonState
-#FounderSociety
-#believe
-#deepfreeze
-#wakethesheeple
-#hatespeech
+version https://git-lfs.github.com/spec/v1
+oid sha256:a2840eb78d3fe6dd5d0d1bc890c3de00269be6821e54989e807ab36370ea2d45
+size 112

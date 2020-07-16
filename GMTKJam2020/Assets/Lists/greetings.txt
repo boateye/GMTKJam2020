@@ -1,10 +1,3 @@
-Hii
-Hello man what’s new?
-What up?
-YoYo
-Welcome back!
-Sup @ColdTruth! what’s today’s topic?
-Hello
-Hi
-What did I miss?
-I’ve been waiting for this all week.
+version https://git-lfs.github.com/spec/v1
+oid sha256:99f30c08a9eb477e0190efbe4c497ac82c95429003f24a87d89eea24c5031d96
+size 162

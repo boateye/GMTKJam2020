@@ -1,33 +1,3 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class SpriteAnimator : MonoBehaviour
-{
-    [SerializeField] private Sprite[] frameArray;
-    private int currentFrame;
-    private float timer;
-    private float framerate = .2f;
-    private SpriteRenderer spriteRenderer;
-
-
-    private void Awake()
-    {
-        {
-            spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-
-        }
-    }
-    private void Update()
-    {
-        timer += Time.deltaTime;
-
-        if (timer >= framerate)
-        {
-            timer -= framerate;
-            currentFrame = (currentFrame +1) % frameArray.Length;
-            spriteRenderer.sprite = frameArray[currentFrame];
-        }
-
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:689166a68d15c3dd25192d7d7b420b964f0c3a0da0a6a89b5df2a70542377cd3
+size 731

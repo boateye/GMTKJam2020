@@ -1,15 +1,3 @@
-Highlight of the week.
-What did I just hear?
-Highlight of the week.
-Did someone Clip that?
-Harsh ma dude you’re gonna pop a blood vessel.
-I didn’t know there was a Second Gulf War.
-AHAHAHAAH!
-Haha
-Wtf?
-LMAO!
-DUH LMAO!!!!11
-Don’t be stupid
-Bless^
-Grrr...
-Wrong way Jo
+version https://git-lfs.github.com/spec/v1
+oid sha256:dabaa6df40fb94292bd7b3537ee1b7d758b5199088ddd67354bc98bfe455c041
+size 272
